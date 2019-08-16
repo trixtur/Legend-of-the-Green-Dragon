@@ -292,7 +292,7 @@ function sanitize_name(bool $spaceallowed = true, string $input): string
  */
 function sanitizeName(string $input): string
 {
-    return preg_replace("([^[:alpha:] _-])", "", $input);
+    return preg_replace("([^[:alnum:] _-])", "", $input);
 }
 
 /**
