@@ -21,7 +21,7 @@ if ($op == "") {
         output("Sadly, this is not to be the case, for as you round a corner within the cave you discover the great beast sitting on its haunches on a huge pile of gold, picking its teeth with a rib.");
     }
     $badguy = array(
-        "creaturename" => translate_inline("`@The Green Dragon`0"),
+        "creaturename" => translate_inline("`!The Green Dragon`0"),
         "creaturelevel" => 18,
         "creatureweapon" => translate_inline("Great Flaming Maw"),
         "creatureattack" => 45,
@@ -241,14 +241,14 @@ if ($op == "") {
     if ($session['user']['dragonkills'] == 1) {
         addnews(
                 sprintf_translate(
-                        "`#%s`# has earned the title `&%s`# for having slain the `@Green Dragon`& `^%s`# time!", $regname, $session['user']['title'], $session['user']['dragonkills']
+                        "`#%s`# has earned the title `&%s`# for having slain the `!Green Dragon`& `^%s`# time!", $regname, $session['user']['title'], $session['user']['dragonkills']
                 )
         );
         output("`n`n`&Because you have slain the dragon %s time, you start with some extras.  You also keep additional permanent hitpoints you've earned.`n", $session['user']['dragonkills']);
     } else {
         addnews(
                 sprintf_translate(
-                        "`#%s`# has earned the title `&%s`# for having slain the `@Green Dragon`& `^%s`# times!", $regname, $session['user']['title'], $session['user']['dragonkills']
+                        "`#%s`# has earned the title `&%s`# for having slain the `!Green Dragon`& `^%s`# times!", $regname, $session['user']['title'], $session['user']['dragonkills']
                 )
         );
         output("`n`n`&Because you have slain the dragon %s times, you start with some extras.  You also keep additional permanent hitpoints you've earned.`n", $session['user']['dragonkills']);
@@ -278,10 +278,10 @@ if ($battle) {
         if ($badguy['diddamage'] != 1)
             $flawless = 1;
         $session['user']['dragonkills'] ++;
-        output("`&With a mighty final blow, `@The Green Dragon`& lets out a tremendous bellow and falls at your feet, dead at last.");
+        output("`&With a mighty final blow, `!The Green Dragon`& lets out a tremendous bellow and falls at your feet, dead at last.");
         addnews(
                 sprintf_translate(
-                        "`&%s has slain the hideous creature known as `@The Green Dragon`&.  All across the land, people rejoice!", $session['user']['name']
+                        "`&%s has slain the hideous creature known as `!The Green Dragon`&.  All across the land, people rejoice!", $session['user']['name']
                 )
         );
         tlschema("nav");
@@ -296,13 +296,13 @@ if ($battle) {
             if ($session['user']['sex']) {
                 addnews(
                         sprintf_translate(
-                                "`%%s`5 has been slain when she encountered `@The Green Dragon`5!!!  Her bones now litter the cave entrance, just like the bones of those who came before.`n%s", $session['user']['name'], $taunt
+                                "`%%s`5 has been slain when she encountered `!The Green Dragon`5!!!  Her bones now litter the cave entrance, just like the bones of those who came before.`n%s", $session['user']['name'], $taunt
                         )
                 );
             } else {
                 addnews(
                         sprintf_translate(
-                                "`%%s`5 has been slain when he encountered `@The Green Dragon`5!!!  His bones now litter the cave entrance, just like the bones of those who came before.`n%s", $session['user']['name'], $taunt
+                                "`%%s`5 has been slain when he encountered `!The Green Dragon`5!!!  His bones now litter the cave entrance, just like the bones of those who came before.`n%s", $session['user']['name'], $taunt
                         )
                 );
             }
@@ -310,7 +310,7 @@ if ($battle) {
             debuglog("lost {$session['user']['gold']} gold when they were slain");
             $session['user']['gold'] = 0;
             $session['user']['hitpoints'] = 0;
-            output("`b`&You have been slain by `@The Green Dragon`&!!!`n");
+            output("`b`&You have been slain by `!The Green Dragon`&!!!`n");
             output("`4All gold on hand has been lost!`n");
             output("You may begin fighting again tomorrow.");
 
